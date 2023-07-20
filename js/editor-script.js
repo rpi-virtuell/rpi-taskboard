@@ -4,8 +4,8 @@
     var TextControl = wp.components.TextControl;
     var RichText = wp.editor.RichText;
 
-    registerBlockType('my-text-block-plugin/text-block', {
-        title: 'My Text Block',
+    registerBlockType('rpi/taskboard', {
+        title: 'rpi-taskboard',
         icon: 'text',
         category: 'common',
         attributes: {
