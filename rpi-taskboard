@@ -3,7 +3,7 @@
 Plugin Name: RPI-virtuell Taskboard
 Description: Ein Gutenberg-Block, der Inhalte eines blogs aus einer Pinwand heraus wie in Taskcards oder Padlet verwaltet.
 Version: 1.0
-Author: Hoachim Happel
+Author: Joachim Happel
 */
 
 function rpi-taskboard_register_block() {
