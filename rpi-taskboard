@@ -1,0 +1,35 @@
+<?php
+/*
+Plugin Name: RPI-virtuell Taskboard
+Description: Ein Gutenberg-Block, der Inhalte eines blogs aus einer Pinwand heraus wie in Taskcards oder Padlet verwaltet.
+Version: 1.0
+Author: Hoachim Happel
+*/
+
+function my_text_block_plugin_register_block() {
+    wp_register_script(
+        'my-text-block-script',
+        plugins_url('editor-script.js', __FILE__),
+        array('wp-blocks', 'wp-editor', 'wp-components')
+    );
+
+    wp_register_style(
+        'my-text-block-editor-style',
+        plugins_url('editor-style.css', __FILE__),
+        array('wp-edit-blocks')
+    );
+
+    wp_register_style(
+        'my-text-block-frontend-style',
+        plugins_url('frontend-style.css', __FILE__),
+        array()
+    );
+
+    register_block_type('my-text-block-plugin/text-block', array(
+        'editor_script' => 'my-text-block-script',
+        'editor_style' => 'my-text-block-editor-style',
+        'style' => 'my-text-block-frontend-style',
+    ));
+}
+
+add_action('init', 'my_text_block_plugin_register_block');
